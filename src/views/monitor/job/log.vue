@@ -243,8 +243,8 @@ function handleView(row) {
 
 /** 删除按钮操作 */
 function handleDelete(row) {
-  proxy.$modal.confirm('是否确认删除调度日志编号为"' + ids.value + '"的数据项?').then(function () {
-    return delJobLog(ids.value);
+  proxy.$modal.confirm('是否确认删除调度日志编号为"' + (row.id || ids.value) + '"的数据项?').then(function () {
+    return delJobLog(row.id || ids.value);
   }).then(() => {
     getList();
     proxy.$modal.msgSuccess("删除成功");

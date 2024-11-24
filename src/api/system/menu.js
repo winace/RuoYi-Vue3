@@ -9,6 +9,14 @@ export function listMenu(query) {
   })
 }
 
+// 查询菜单（精简)列表
+export function listSimpleMenus() {
+  return request({
+    url: '/system/menu/list-all-simple',
+    method: 'get'
+  })
+}
+
 // 查询菜单详细
 export function getMenu(menuId) {
   return request({
